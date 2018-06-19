@@ -24,7 +24,7 @@ def index():
 def test_mysql():
     data = {'service_name':'mysql', 'bind':'null'}
     if services:
-        mysql_services = services.get('azure-mysql-5-7', None)
+        mysql_services = services.get('azure-mysqldb', None)
         if mysql_services:
             data['bind'] = mysql_services[0]
     return jsonify(data)
@@ -34,7 +34,7 @@ def test_mysql():
 def test_postgres():
     data = {'service_name':'postgres', 'bind':'null'}
     if services:
-        postgres_services = services.get('azure-postgresql-9-6', None)
+        postgres_services = services.get('azure-postgresqldb', None)
         if postgres_services:
             data['bind'] = postgres_services[0]
     return jsonify(data)
@@ -44,7 +44,7 @@ def test_postgres():
 def test_sql():
     data = {'service_name':'sql', 'bind':'null'}
     if services:
-        sql_services = services.get('azure-sql-12-0', None)
+        sql_services = services.get('azure-sqldb', None)
         if sql_services:
             data['bind'] = sql_services[0]
     return jsonify(data)
